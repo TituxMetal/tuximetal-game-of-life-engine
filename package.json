@@ -6,7 +6,30 @@
   "author": "Titux Metal <tuximetal@desktop.computer>",
   "license": "MIT",
   "scripts": {
+    "build": "NODE_ENV=production webpack --mode=production",
+    "test": "export NODE_ENV=test && jest --watch test/*.test.js",
+    "test-coverage": "export NODE_ENV=test && jest --coverage test/*.test.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^1.0.0",
+    "jest": "^24.0.0",
+    "terser-webpack-plugin": "^1.2.1",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "jest": {
+    "coverageDirectory": "./test/report",
+    "coverageReporters": [
+      "html"
+    ]
   }
 }

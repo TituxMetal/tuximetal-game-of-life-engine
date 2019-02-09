@@ -14,10 +14,10 @@
     * [x] "build": "NODE_ENV=production webpack --mode=production"
     * [x] "test": "export NODE_ENV=test && jest --watch test/*.test.js"
     * [x] "test-coverage": "export NODE_ENV=test && jest --coverage test/*.test.js"
-  * [ ] Setup test directory
+  * [x] Setup test directory
 * CellState
-  * [ ] Has an ALIVE state
-  * [ ] Has a DEAD state
+  * [x] Has an ALIVE state
+  * [x] Has a DEAD state
 * Cell
   * [ ] Should be initialized with a cellState
   * [ ] Should die if it has fewer than 2 live nieghbors

@@ -2,10 +2,11 @@ import Cell from './Cell'
 import CellState from './CellState'
 
 export default class Game {
-  constructor(state) {
-    this.state = state.map(row => row.map(cellState => new Cell(cellState)))
+  constructor(state, torus) {
+    this.state = this.setState(state)
     this.numRows = this.state.length
     this.numCols = this.state[0].length
+    this.torusMode = torus || false
   }
 
   getCell(row, col) {
@@ -20,7 +21,48 @@ export default class Game {
     return this.state
   }
 
+  getTorusMode() {
+    return this.torusMode
+  }
+
   getNumOfAliveNeighbors(row, col) {
+    return this.torusMode ? this.getTorusAliveNeighbors(row, col) : this.getAliveNeighbors(row, col)
+  }
+
+  nextState() {
+    this.state = this.state.map((row, rowNum) =>
+      row.map((cell, colNum) =>
+        new Cell(cell.getNextState(this.getNumOfAliveNeighbors(rowNum, colNum)))
+      )
+    )
+  }
+
+  setState(state) {
+    return state.map(row => row.map(cellState => new Cell(cellState)))
+  }
+
+  toggleTorusMode() {
+    this.torusMode = !this.torusMode
+  }
+
+  getTorusAliveNeighbors(row, col) {
+    let numNeighbors = 0
+
+    for (let x = -1; x < 2; x++) {
+      for (let y = -1; y < 2; y++) {
+        const rows = (row + x + this.numRows) % this.numRows
+        const cols = (col + y + this.numCols) % this.numCols
+        if (!(rows === row && cols === col)) {
+          const cellState = this.getCellState(rows, cols)
+          numNeighbors += this.getStateValues(cellState)
+        }
+      }
+    }
+
+    return numNeighbors
+  }
+
+  getAliveNeighbors(row, col) {
     let numNeighbors = 0
     const startRow = row - 1 < 0 ? 0 : row - 1
     const endRow = row + 1 >= this.numRows ? this.numRows - 1 : row + 1
@@ -37,14 +79,6 @@ export default class Game {
     }
 
     return numNeighbors
-  }
-
-  nextState() {
-    this.state = this.state.map((row, rowNum) =>
-      row.map((cell, colNum) =>
-        new Cell(cell.getNextState(this.getNumOfAliveNeighbors(rowNum, colNum)))
-      )
-    )
   }
 
   getStateValues(state) {

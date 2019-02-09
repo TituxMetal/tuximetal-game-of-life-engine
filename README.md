@@ -19,14 +19,14 @@
   * [x] Has an ALIVE state
   * [x] Has a DEAD state
 * Cell
-  * [ ] Should be initialized with a cellState
-  * [ ] Should die if it has fewer than 2 live nieghbors
-    * [ ] getNextState(numNeighbors)
-  * [ ] Should live with 2 or 3 live neighbors
-  * [ ] Should stay dead if it has fewer than 2 live neighbors
-  * [ ] Should die with more than 3 neighbors
-  * [ ] Should stay dead with more than 3 neighbors
-  * [ ] Should come alive with exactly 3 neighbors
+  * [x] Should be initialized with a cellState
+  * [x] Should die if it has fewer than 2 live nieghbors
+    * [x] getNextState(numNeighbors)
+  * [x] Should live with 2 or 3 live neighbors
+  * [x] Should stay dead if it has fewer than 2 live neighbors
+  * [x] Should die with more than 3 neighbors
+  * [x] Should stay dead with more than 3 neighbors
+  * [x] Should come alive with exactly 3 neighbors
 * Game
   * [ ] Should be initialized with a given state
     * [ ] Array of arrays of states

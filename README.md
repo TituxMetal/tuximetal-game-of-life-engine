@@ -33,3 +33,7 @@
   * [x] Should retrieve a cell at a given cell
   * [x] Should get the number of alive neighbors for a given cell
   * [x] Should create the next state of the game
+  * Torus mode
+    * [x] Toggle torus/normal mode
+    * [x] getTorusAliveNeighbors (torus mode)
+    * [x] getAliveNeighbors (normal mode)

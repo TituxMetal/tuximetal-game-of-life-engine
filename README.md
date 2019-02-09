@@ -1,19 +1,20 @@
 # Game of Life engine by TuxiMetal
 
 * Setup the project
-  * [ ] Install dependencies
-    * [ ] jest
-    * [ ] babel
-    * [ ] webpack and plugins
-  * [ ] Setup webpack
-  * [ ] Setup in package.json
-    * [ ] "@babel/preset-env"
-    * [ ] "jest"
+  * [x] Install dependencies
+    * [x] jest
+    * [x] babel
+    * [x] webpack and plugins
+  * [x] Setup webpack
+    * [x] webpack.config.js file
+  * [x] Setup in package.json
+    * [x] "@babel/preset-env"
+    * [x] "jest"
+  * [x] Add scripts
+    * [x] "build": "NODE_ENV=production webpack --mode=production"
+    * [x] "test": "export NODE_ENV=test && jest --watch test/*.test.js"
+    * [x] "test-coverage": "export NODE_ENV=test && jest --coverage test/*.test.js"
   * [ ] Setup test directory
-  * [ ] Add scripts
-    * [ ] "build": "NODE_ENV=production webpack --mode=production"
-    * [ ] "test": "export NODE_ENV=test && jest --watch test/*.test.js"
-    * [ ] "test-coverage": "export NODE_ENV=test && jest --coverage test/*.test.js"
 * CellState
   * [ ] Has an ALIVE state
   * [ ] Has a DEAD state

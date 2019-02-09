@@ -28,8 +28,8 @@
   * [x] Should stay dead with more than 3 neighbors
   * [x] Should come alive with exactly 3 neighbors
 * Game
-  * [ ] Should be initialized with a given state
-    * [ ] Array of arrays of states
-  * [ ] Should retrieve a cell at a given cell
-  * [ ] Should get the number of alive neighbors for a given cell
-  * [ ] Should create the next state of the game
+  * [x] Should be initialized with a given state
+    * [x] Array of arrays of states
+  * [x] Should retrieve a cell at a given cell
+  * [x] Should get the number of alive neighbors for a given cell
+  * [x] Should create the next state of the game
